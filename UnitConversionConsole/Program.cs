@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using UnitConversionLibrary.Classes;
 
 namespace UnitConversionConsole
 {
@@ -10,6 +8,8 @@ namespace UnitConversionConsole
     {
         static void Main(string[] args)
         {
+            UnitConverter up = new UnitConverter();
+            Console.WriteLine(up.Convert("1 centimeter", "feet"));
         }
     }
 }

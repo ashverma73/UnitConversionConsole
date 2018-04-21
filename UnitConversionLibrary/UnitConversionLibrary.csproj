@@ -4,15 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{79677530-04A6-48D5-B01B-51B51D76F6C2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>UnitConversionConsole</RootNamespace>
-    <AssemblyName>UnitConversionConsole</AssemblyName>
+    <ProjectGuid>{3B3E7A81-864C-4DE2-95DC-569438BE518B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnitConversionLibrary</RootNamespace>
+    <AssemblyName>UnitConversionLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,17 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Classes\UnitConverter.cs" />
+    <Compile Include="Classes\DerivedUnit.cs" />
+    <Compile Include="Classes\PrefixMultipliers.cs" />
+    <Compile Include="Classes\UnitBase.cs" />
+    <Compile Include="Classes\UnitCollection.cs" />
+    <Compile Include="Classes\UnitParser.cs" />
+    <Compile Include="Interfaces\IBaseUnit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UnitConversionLibrary\UnitConversionLibrary.csproj">
-      <Project>{3b3e7a81-864c-4de2-95dc-569438be518b}</Project>
-      <Name>UnitConversionLibrary</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
