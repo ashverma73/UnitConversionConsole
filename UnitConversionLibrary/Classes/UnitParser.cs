@@ -40,6 +40,7 @@ namespace UnitConversionLibrary.Classes
                     return data;
                 }
 
+            }
                 // now check for prefixes
                 var prefixes = myField.Where(p => value.StartsWith(p,StringComparison.CurrentCultureIgnoreCase));
                 if (prefixes != null && prefixes.Count() > 0)
@@ -48,14 +49,9 @@ namespace UnitConversionLibrary.Classes
                     data.prefix = (Prefix) m.GetValue(null);
                     value = value.Substring(data.prefix.Name.Length);
                 }
-
-                UnitCollection uc = new UnitCollection();
-                data.unit = uc.GetUnit(value);
-       
-            }
-            
-
-            
+                
+                data.unit = UnitCollection.GetUnit(value);
+        
             return data;
         }
 
